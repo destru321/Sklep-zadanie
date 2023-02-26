@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +22,56 @@ namespace Shop
             this.laptops = _laptops;
             this.phones = _phones;
         }
+
+        public void ChoicePanel(int choice)
+        {
+            if (choice == 1)
+            {
+                // Wywolanie menu sklepu
+
+                MyProgram();
+            }
+            else
+            {
+                Computer c1 = new Computer("X-KOM", 16, 1000, "i3-12100F", "Windows 10", "GIGABYTE B550", 4000, "AMD Radeon RX 6600", 500);
+
+                Console.WriteLine("Dla klasy Computer: ");
+                Console.WriteLine("");
+                c1.TurnOn();
+                Console.WriteLine("------------------------");
+                c1.ShowMainParams();
+                Console.WriteLine("------------------------");
+                c1.ChangeProcessor();
+                Console.WriteLine("------------------------");
+                c1.ShowMainParams();
+                Console.WriteLine("------------------------");
+                c1.TurnOff();
+                Console.WriteLine("------------------------");
+
+                Laptop l1 = new Laptop("ASUS", 16, 1000, "Intel Core i7", "Windows 10", "ASUS Motherboard", 6000, "Nvidia GeForce RTX 3080", "Mechanical", 17, 4, true);
+
+                Console.WriteLine("Dla klasy Laptop: ");
+                Console.WriteLine("");
+                l1.ShowAllParams();
+                Console.WriteLine("------------------------");
+                l1.ChangeBattery();
+                Console.WriteLine("------------------------");
+                l1.ShowAllParams();
+                Console.WriteLine("------------------------");
+
+                Phone p1 = new Phone("Apple", 4, 64, "Apple A14 Bionic", "iOS 14", "Apple Motherboard", 3000, "Apple GPU", 12, 12, 6.1m, 17, "iPhone 12");
+
+                Console.WriteLine("Dla klasy Phone: ");
+                Console.WriteLine("");
+                p1.InputSimCard();
+
+                Console.WriteLine("");
+                Console.WriteLine("Niektore metody nie zostaly uzyte tutaj ale zostaly uzyte w menu sklepu");
+
+
+            }
+        } 
+
         public int MainPanel()
         {
             Console.WriteLine("-----Welcome in our store, what are you looking for today?-----");
