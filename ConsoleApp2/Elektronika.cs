@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-
+using System.Runtime.CompilerServices;
 
 namespace Shop
 {
@@ -53,10 +53,17 @@ namespace Shop
 
             }
 
-
-            // Wywolanie logiki konsoli
             ConsoleLogic program = new ConsoleLogic(computers, laptops, phones);
-            program.MyProgram();
+
+            Console.WriteLine("1. Shop menu");
+            Console.WriteLine("2. Test methods");
+            Console.Write("(Input number): ");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+
+            program.ChoicePanel(choice);
+            
+
         }
     }
 
